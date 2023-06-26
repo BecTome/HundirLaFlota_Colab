@@ -1,5 +1,5 @@
-SIZE = 3
-BOAT_SIZES = [2, 3, 3, 4, 5]
+SIZE = 5
+BOAT_SIZES = [3, 2, 1]
 EMPTY_SIGN = "_"
 BOAT_SIGN = "O"
 HIT_SIGN = "X"

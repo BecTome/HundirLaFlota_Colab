@@ -6,19 +6,19 @@ class Player():
     HIT_SIGN = config.HIT_SIGN    
     WATER_SIGN = config.WATER_SIGN
 
-    def __init__(self, name, tablero):
+    def __init__(self, name):
         self.name = name
-        self.tablero = tablero
 
-    def shoot(self, coord):
+    def shoot(self, coord_x, coord_y, tablero):
         '''
         Shoot to the board
         '''
-        tab = self.tablero.tablero.copy()
-        if tab[coord] == self.tablero.BOAT_SIGN:
+        coord = (coord_x, coord_y)
+        tab = tablero.tablero.copy()
+        if tab[coord] == tablero.BOAT_SIGN:
             tab[coord] = self.HIT_SIGN
             # self.tablero.tablero = tab
-        elif tab[coord] == self.tablero.EMPTY_SIGN:
+        elif tab[coord] == tablero.EMPTY_SIGN:
             tab[coord] = self.WATER_SIGN
             # self.tablero.tablero = tab
         elif tab[coord] == self.HIT_SIGN or tab[coord] == self.WATER_SIGN:
@@ -28,6 +28,7 @@ class Player():
     
 if __name__ == "__main__":
     from HLF.src.tablero import Tablero
-    tablero_player = Tablero()
-    player = Player("Player 1", tablero_player)
+    tablero_to_shoot = Tablero()
+    tablero_to_shoot.initialize_boats()
+    player = Player("Player 1")
     print(player)
