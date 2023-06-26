@@ -3,6 +3,19 @@ sys.path.append(os.getcwd())
 from HLF.utils import config
 
 class Player():
+    '''
+    Player class. Receives the name of the player.
+
+    Attributes:
+        name (str): Name of the player.
+        HIT_SIGN (str): Sign of a hit.
+        WATER_SIGN (str): Sign of water.
+    
+    Methods:
+        shoot(coord_x, coord_y, tablero): Shoot to the board. 
+            Receives the coordinates and the board.
+    '''
+
     HIT_SIGN = config.HIT_SIGN    
     WATER_SIGN = config.WATER_SIGN
 
@@ -11,7 +24,8 @@ class Player():
 
     def shoot(self, coord_x, coord_y, tablero):
         '''
-        Shoot to the board
+        Shoot to the board. Receives the coordinates and the board.
+        Returns the board with the shot.
         '''
         coord = (coord_x, coord_y)
         tab = tablero.tablero.copy()
