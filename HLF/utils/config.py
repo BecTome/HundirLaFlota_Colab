@@ -1,4 +1,4 @@
-SIZE = 5
+SIZE = 3
 BOAT_SIZES = [3, 2, 1]
 EMPTY_SIGN = "_"
 BOAT_SIGN = "O"
